@@ -1,6 +1,7 @@
 # Template for a Bootstrap Dash app
 
 ## For developers
+
 ### Set through setup (VScode) 
 
 1. right click on project root folder > select **open in terminal**

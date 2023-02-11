@@ -2,14 +2,19 @@ import functools
 import json
 import os
 from typing import Dict
+import configparser
 
-import pandas as pd
+'''
+Load config from config.ini
+'''
 
-OG_DESCRIPTION = "Glass explore calculates thermal and optic properties of double-glazing, using coating are substrates in the IGDB database. Currently the app is only set up to run the NFRC 100-2010 environment."
+config = configparser.ConfigParser()
+config.read(os.path.join('config.ini'))
 
-PATH_DATA = os.path.join('data')
+OG_DESCRIPTION = config['OpenGraph']['Description']
 
-DEVTEMP = os.path.join(os.getcwd(),'temp') 
+PATH_DATA = os.path.join(os.getcwd(),config['Paths']['Data']) 
+PATH_TEMP = os.path.join(os.getcwd(),config['Paths']['Temp']) 
 
 class LayoutID:
 
@@ -18,11 +23,7 @@ class LayoutID:
 
     MODAL_SETTINGS = "modal-settings"
     MODAL_SETTINGS_CLOSE = "modal-settings-close"
-
-    DIV_OUTERLITE_PRODUCT = "div-outerlite-product"
-    DIV_BUILDUP_SVG_CONTAINER = "div-buildup-svg-container"
-
-    
+   
     NAVLINK_ABOUT = "navlink_about"
     NAVLINK_SETTINGS = "navlink_settings"
 
@@ -31,17 +32,3 @@ class LayoutID:
     TAB_CONTENT = "tab-content"
 
     URL = "url"
-
-
-
-
-DEFAULT_OPTICAL_STANDARD = "W5_NFRC_2003.std"
-
-@functools.cache    
-def standards():
-
-    fpath = os.path.join(PATH_DATA,'standards.json')
-    with open(fpath) as f:
-        s = json.load(f)
-    return s
-    

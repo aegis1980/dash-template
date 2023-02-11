@@ -1,8 +1,8 @@
 # Template for a Bootstrap Dash app
 
-## For developers
 
-### Set through setup (VScode) 
+
+## Get started (VScode) 
 
 1. right click on project root folder > select **open in terminal**
 2. `python -m venv .venv` to setup python virtual environment for this project. TIP: copy from here and right click in terminal to paste-and-execute.
@@ -13,7 +13,7 @@
 7. `pip install -e .` to make editable
 8. Run `./dash_app/index.py` to run with **dev server**. (Running `./production.py` runs using `gunicorn` in production environment)
 
-### Dependancies/ packages
+## Dependancies/ packages
 
 Use `pip-chill` to freeze requirements file, rather than `pip freeze` and delete `dash_app` line that's created.
 
@@ -21,8 +21,14 @@ Use `pip-chill` to freeze requirements file, rather than `pip freeze` and delete
 pip-chill > requirements.txt
 ```
 
-### Heroku deployment
+## Configuration
 
-### LFS
+
+
+## Deployment
+
+
+#### LFS
 
 Uses this [Heroku buildpack](https://github.com/radian-software/heroku-buildpack-git-lfs) for LFS.
+

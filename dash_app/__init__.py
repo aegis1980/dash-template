@@ -5,7 +5,7 @@ from typing import Dict
 import configparser
 
 '''
-Load config from config.ini
+Load config from config.toml
 '''
 
 config = configparser.ConfigParser()

@@ -1,6 +1,6 @@
 [details]
-title = My app
-description = Site description as it will appear on OpenGraph
+title = "My app"
+description = "Site description as it will appear on OpenGraph"
 author = me
 
 [paths]
